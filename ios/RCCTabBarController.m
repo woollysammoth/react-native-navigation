@@ -126,7 +126,7 @@
 
         NSString *tabBarCustomShadow = tabsStyle[@"tabBarCustomShadow"];
         if (tabBarCustomShadow) {
-            self.tabBar.clipsToBounds = [tabBarCustomShadow boolValue] ? NO : YES;
+            self.tabBar.clipsToBounds = [tabBarCustomShadow boolValue] ? NO : NO;
 
             self.tabBar.layer.shadowColor = [UIColor blackColor].CGColor;
             self.tabBar.layer.shadowOffset = CGSizeMake(0,-1);
