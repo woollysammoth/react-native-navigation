@@ -125,13 +125,19 @@
         }
 
         NSString *tabBarCustomShadow = tabsStyle[@"tabBarCustomShadow"];
+        NSString *tabBarCustomShadowSmall = tabsStyle[@"tabBarCustomShadowSmall"];
         if (tabBarCustomShadow) {
-            self.tabBar.clipsToBounds = [tabBarCustomShadow boolValue] ? NO : NO;
+            self.tabBar.clipsToBounds = NO;
 
             self.tabBar.layer.shadowColor = [UIColor blackColor].CGColor;
             self.tabBar.layer.shadowOffset = CGSizeMake(0,-1);
-            self.tabBar.layer.shadowOpacity = 0.5;
-            self.tabBar.layer.shadowRadius = 6;
+            self.tabBar.layer.shadowOpacity = 0.2;
+            self.tabBar.layer.shadowRadius = 4;
+
+            if(tabBarCustomShadowSmall){
+                self.tabBar.layer.shadowRadius = [tabBarCustomShadowSmall boolValue] ? 4 : 40;
+            }
+
         }
     }
     
